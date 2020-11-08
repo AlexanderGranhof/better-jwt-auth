@@ -5,7 +5,7 @@ const envPath = path.resolve(__dirname, '../../../', '.env')
 
 dotenv.config({ path: envPath })
 
-const { ACCESS_SECRET, ACCESS_EXPIRE, REFRESH_SECRET, REFRESH_EXPIRE } = process.env as Record<string, string>
+const { ACCESS_SECRET, ACCESS_EXPIRE, REFRESH_SECRET, REFRESH_EXPIRE, PORT } = process.env as Record<string, string>
 
 const createEnvErrorMessage = (name: string) => {
     return `missing environment variable ${name}. please add it to the environment or store it in an .env file located at ${envPath}`
@@ -27,4 +27,8 @@ if (typeof REFRESH_EXPIRE !== 'string' || REFRESH_EXPIRE.length === 0) {
     throw createEnvErrorMessage('REFRESH_EXPIRE')
 }
 
-export { ACCESS_SECRET, ACCESS_EXPIRE, REFRESH_SECRET, REFRESH_EXPIRE }
+if (typeof PORT !== 'string' || PORT.length === 0) {
+    throw createEnvErrorMessage('PORT')
+}
+
+export { ACCESS_SECRET, ACCESS_EXPIRE, REFRESH_SECRET, REFRESH_EXPIRE, PORT }
