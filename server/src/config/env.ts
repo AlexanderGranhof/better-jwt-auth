@@ -20,11 +20,11 @@ if (typeof REFRESH_SECRET !== 'string' || REFRESH_SECRET.length === 0) {
 }
 
 if (typeof ACCESS_EXPIRE !== 'string' || ACCESS_EXPIRE.length === 0) {
-    throw createEnvErrorMessage('ACCESS_SECRET')
+    throw createEnvErrorMessage('ACCESS_EXPIRE')
 }
 
 if (typeof REFRESH_EXPIRE !== 'string' || REFRESH_EXPIRE.length === 0) {
-    throw createEnvErrorMessage('REFRESH_SECRET')
+    throw createEnvErrorMessage('REFRESH_EXPIRE')
 }
 
 export { ACCESS_SECRET, ACCESS_EXPIRE, REFRESH_SECRET, REFRESH_EXPIRE }
