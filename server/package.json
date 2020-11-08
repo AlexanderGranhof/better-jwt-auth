@@ -6,7 +6,7 @@
     "build": "tsc",
     "start": "node build/index.js",
     "dev": "ts-node-dev --respawn src/index.ts",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "db:init": "knex --knexfile 'src/services/db/knexfile.js' migrate:latest"
   },
   "keywords": [],
   "author": "",
