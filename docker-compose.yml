@@ -7,7 +7,9 @@ services:
             - 8080:8080
         environment: 
             - ACCESS_SECRET=<your_secret_here>
+            - ACCESS_EXPIRE=60000 # 1 min
             - REFRESH_SECRET=<your_secret_here>
+            - REFRESH_EXPIRE=600000 # 10 min
             - PORT=8080
 
         volumes: 
