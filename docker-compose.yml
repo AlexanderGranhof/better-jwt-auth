@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+    server:
+        build: ./server
+        ports:
+            - 8080:8080
+        environment: 
+            - ACCESS_SECRET=<your_secret_here>
+            - REFRESH_SECRET=<your_secret_here>
+            - PORT=8080
+
+        volumes: 
+            - ./server:/server
