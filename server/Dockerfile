@@ -5,7 +5,8 @@ COPY package*.json ./
 
 COPY tsconfig.json .
 
-RUN npm install
-RUN npm run build
+# Prod
+# RUN npm install
+# RUN npm run build
 
 ENTRYPOINT [ "npm", "run", "start" ]
